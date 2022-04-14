@@ -1,17 +1,12 @@
 namespace laba1.models
 {
-    public class Circle: IShape
+    public class Circle
     {
-        public double Radius { get; set; }
+        protected double Radius { get; set; }
 
-        public Circle(double radius)
+        protected Circle(double radius)
         {
             Radius = radius;
-        }
-
-        public void Draw()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -1,21 +1,16 @@
 namespace laba1.models
 {
-    public class Triangle: IShape
+    public class Triangle
     {
-        public double X1 { get; set; }
-        public double X2 { get; set; }
-        public double X3 { get; set; }
+        protected double FirstSide { get; set; }
+        protected double SecondSide { get; set; }
+        protected double ThirdSide { get; set; }
 
-        public Triangle(double x1, double x2, double x3)
+        public Triangle(double firstSide, double secondSide, double thirdSide)
         {
-            X1 = x1;
-            X2 = x2;
-            X3 = x3;
-        }
-
-        public void Draw()
-        {
-            throw new System.NotImplementedException();
+            FirstSide = firstSide;
+            SecondSide = secondSide;
+            ThirdSide = thirdSide;
         }
     }
 }

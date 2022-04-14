@@ -1,4 +1,5 @@
 ﻿using System;
+using laba1.services;
 
 namespace laba1
 {
@@ -6,7 +7,8 @@ namespace laba1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            FiguresDrawer figuresDrawer = new FiguresDrawer();
+            figuresDrawer.PrintFiguresCollection();
         }
     }
 }

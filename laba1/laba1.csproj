@@ -5,4 +5,13 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="interfaces" />
+      <Folder Include="tests" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="SkiaSharp" Version="2.88.0-preview.232" />
+    </ItemGroup>
+
 </Project>

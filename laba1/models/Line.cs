@@ -1,19 +1,11 @@
 namespace laba1.models
 {
-    public class Line: IShape
+    public class Line
     {
-        public int X1 { get; set; }
-        public int X2 { get; set; }
-
-        public Line(int x1, int x2)
+        protected double Width { get; set; }
+        protected Line(double width)
         {
-            X1 = x1;
-            X2 = x2;
-        }
-
-        public void Draw()
-        {
-            throw new System.NotImplementedException();
+            Width = width;
         }
     }
 }
