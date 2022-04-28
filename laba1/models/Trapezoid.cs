@@ -1,23 +1,46 @@
 using System;
+using System.Collections.Generic;
 
 namespace laba1.models
 {
-    public class Trapezoid
+    public class Trapezoid: Figure
     {
         protected double LeftSide;
 
-        protected double RightSide;
+        protected int RightSide;
 
-        protected double BottomSide;
-        protected double TopSide;
-        
+        protected int BottomSide;
+        protected int TopSide;
 
-        protected Trapezoid(double leftSide, double rightSide, double topSide, double bottomSide)
+
+        public Trapezoid(int leftSide, int rightSide, int topSide, int bottomSide)
         {
             LeftSide = leftSide;
             RightSide = rightSide;
             TopSide = topSide;
             BottomSide = bottomSide;
+        }
+
+        private int GetHeight()
+        {
+            return (int)(Math.Sqrt(LeftSide * LeftSide-(((BottomSide-TopSide)*(BottomSide-TopSide)+LeftSide*LeftSide-RightSide*RightSide)/(2*(BottomSide-TopSide)))));
+        }
+        public override IEnumerable<Dot> GenerateDots()
+        {
+            var height = GetHeight();
+            var topSideStartPosition = (int) Math.Sqrt(LeftSide * LeftSide - height*height);
+            var dots = new List<Dot>
+            {
+                new(new Coordinate(0, 0)), // Bottom side
+                new(new Coordinate(topSideStartPosition, height)),
+                new(new Coordinate(topSideStartPosition + TopSide, height)),
+                new(new Coordinate(BottomSide, 0))
+            };
+            return dots;
+        }
+        public override string ToString()
+        {
+            return "Trapezoid";
         }
     }
 }
